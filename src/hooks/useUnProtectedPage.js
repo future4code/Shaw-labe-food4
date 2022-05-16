@@ -1,17 +1,15 @@
-import {goToFeedPage} from "../router/coodinator"
+import { goToHome } from '../router/coordinator'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
-
-const useUnprotectedPage = () => {
+const useUnProtectedPage = () => {
   const navigate = useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token){
-      goToFeedPage(navigate)
+      goToHome(navigate)
     }
   }, [navigate])
 }
 
-export default useUnprotectedPage
+export default useUnProtectedPage;

@@ -1,34 +1,21 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import { InputsContainer, SignUpButton, SigButtonLetter  } from "./styled";
+import LoginForm from "./LoginForm";
+import { useNavigate } from "react-router-dom";
+import { goToSignupPage } from "../../router/coordinator";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}));
-
-export default function LoginPage() {
-  const classes = useStyles();
+const LoginPage = () => {
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="outlined-basic" label="E-mail" variant="outlined" />
-        <TextField id="outlined-basic" label="Senha" variant="outlined" />
-      </form>
-      <div className={classes.root}>
-      <Button variant="contained" color="secondary">
-        Entrar
-      </Button>
-      <p>Não possui cadastro? Clique aqui.</p>
-      
-    </div>
-    </div>
-
+    <center>
+      <InputsContainer>
+        <LoginForm  />
+        <SignUpButton onClick={() => goToSignupPage(navigate)}><SigButtonLetter>Crie uma conta!</SigButtonLetter></SignUpButton>
+      </InputsContainer>
+    </center>
   );
-}
+};
+
+export default LoginPage;
+
