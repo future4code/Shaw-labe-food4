@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function LoginPage() {
+export default function LoginPage() {
   const classes = useStyles();
 
   return (

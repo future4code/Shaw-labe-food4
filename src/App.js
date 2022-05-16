@@ -1,12 +1,12 @@
 import React from 'react';
-import {LoginPage} from "./pages/LoginPage/LoginPage"
+import Router from './router/Router';
 
 
 function App() {
   return (
     <div className="App">
     <h1>LabeFood</h1>
-    <LoginPage/>
+    <Router/>
     </div>
   );
 }
