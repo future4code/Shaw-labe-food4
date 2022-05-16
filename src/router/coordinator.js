@@ -5,18 +5,26 @@ import React from "react";
 // mudar nome das funçoes
 
 
-export const goToFeedPage = (navigate) => {
+export const goToHome = (navigate) => {
     navigate("/")
+}
+export const goToRestaurante = (navigate) => {
+    navigate("/restaurante")
 }
 
 export const goToLoginPage = (navigate) => {
     navigate("/login")
 }
 export const goToSignupPage = (navigate) => {
-    navigate("/signup")
+    navigate("/user/signup")
 }
-export const goToPostPage = (navigate, id) => {
-    navigate(`/post/${id}`)
+
+export const goToEditarCadastro = (navigate) => {
+    navigate("/user/editar-cadastro")
+}
+
+export const goToDetailsPage = (navigate, id) => {
+    navigate(`/restaurante/details/${id}`)
 }
 export const goToBack = (navigate) => {
     navigate(-1)
