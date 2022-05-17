@@ -16,7 +16,7 @@ export const goToLoginPage = (navigate) => {
     navigate("/login")
 }
 export const goToSignupPage = (navigate) => {
-    navigate("/user/signup")
+    navigate("/signup")
 }
 
 export const goToProfile = (navigate) => {
@@ -28,7 +28,7 @@ export const goToDetailsPage = (navigate, id) => {
 }
 
 export const goToRegistrarEndereço = (navigate) => {
-    navigate("user/adicionar-endereco")
+    navigate("/adicionar-endereco")
 }
 
 export const goToBack = (navigate) => {

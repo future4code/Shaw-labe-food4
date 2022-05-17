@@ -31,16 +31,16 @@ export const login = (
     });
 };
 
-export const signUp = (body, clear, navigate /* setRightButtonText */) => {
+//Requisição para criar um login e ir para a criação de endereços
+export const signUp = (body, clear, navigate/* setRightButtonText */) => {
   axios
     .post(`${BASE_URL}/signup`, body)
     .then((res) => {
+      console.log(res);
       localStorage.setItem("token", res.data.token);
-      console.log("Deu certo", res.data);
       alert("Cadastro realizado com sucesso");
       clear();
-      /* goToRegistrarEndereço(navigate); */
-      /* setRightButtonText("Logout"); */
+      goToRegistrarEndereço(navigate); 
     })
     .catch((err) => {
       console.log("Deu erro", err.response);
