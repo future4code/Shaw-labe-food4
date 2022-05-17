@@ -41,8 +41,6 @@ export const goToBack = (navigate) => {
 export const goToEdditProfile = (navigate) => {
     navigate("/user/profile/eddit-profile")
 }
-export const goToEdditAddress = (navigate) => {
-    navigate("/user/profile/eddit-address")
-}
+
 
 
