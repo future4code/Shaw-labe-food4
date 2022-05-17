@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { login } from "../../services/user";
-import { PostButton, ButtonLetter, ImgSize } from "./styled";
+import { PostButton, ImgSize, FormStyle } from "./styled";
 import { TextField } from "@material-ui/core";
 import logo from "../../assets/img/logo.png"
 
@@ -18,7 +18,7 @@ const LoginForm = () => {
   return (
     <center>
       <ImgSize src={logo}/>
-      <form onSubmit={onSubimitForm}>
+      <FormStyle onSubmit={onSubimitForm}>
         <TextField
           autoFocus
           fullWidth
@@ -48,10 +48,9 @@ const LoginForm = () => {
           placeholder="Senha*"
           required
         />
-        <PostButton>
-          <ButtonLetter>Continuar</ButtonLetter>
-        </PostButton>
-      </form>
+        <PostButton>Continuar</PostButton>
+        
+      </FormStyle>
     </center>
   );
 };

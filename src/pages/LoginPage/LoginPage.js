@@ -1,5 +1,5 @@
 import React from "react";
-import { InputsContainer, SignUpButton, SigButtonLetter  } from "./styled";
+import {  InputSize, SignUpButton  } from "./styled";
 import LoginForm from "./LoginForm";
 import { useNavigate } from "react-router-dom";
 import { goToSignupPage } from "../../router/coordinator";
@@ -9,10 +9,10 @@ const LoginPage = () => {
 
   return (
     <center>
-      <InputsContainer>
-        <LoginForm  />
-        <SignUpButton onClick={() => goToSignupPage(navigate)}><SigButtonLetter>Crie uma conta!</SigButtonLetter></SignUpButton>
-      </InputsContainer>
+      <InputSize>
+        <LoginForm/>
+      </InputSize>
+      <SignUpButton onClick={() => goToSignupPage(navigate)}><strong>Não possui cadastro? Clique aqui</strong></SignUpButton>
     </center>
   );
 };
