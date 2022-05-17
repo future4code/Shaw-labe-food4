@@ -53,7 +53,7 @@ const Profile = () => {
           <p>{profile.address && profile.address}</p>
         </CardAddress>
         <ContainerButtonAdress>
-          <ImPencil onClick={()=>goToEdditProfile(navigate)} />
+          <ImPencil onClick={()=>goToEdditAddress(navigate)} />
         </ContainerButtonAdress>
       </ContainerCardAddress>
       <p>Histórico de pedidos</p>
