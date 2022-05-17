@@ -1,8 +1,12 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/BASE_URL";
-import { goToHome } from "../router/coordinator";
+import { goToHome, goToRegistrarEndereço } from "../router/coordinator";
 
-export const login = (body, clear, navigate /* setRightButtonText, setIsLoading */) => {
+export const login = (
+  body,
+  clear,
+  navigate /* setRightButtonText, setIsLoading */
+) => {
   /* setIsLoading(true) */
   axios
     .post(`${BASE_URL}/login`, body)
@@ -17,7 +21,7 @@ export const login = (body, clear, navigate /* setRightButtonText, setIsLoading 
     .catch((err) => {
       console.log("Deu erro", err);
       alert(err.response.data.message);
-     /*  setIsLoading(false) */
+      /*  setIsLoading(false) */
     });
 };
 
@@ -29,11 +33,29 @@ export const signUp = (body, clear, navigate /* setRightButtonText */) => {
       alert("Cadastro realizado com sucesso");
       localStorage.setItem("token", res.data.token);
       clear();
-      goToHome(navigate);
+      goToRegistrarEndereço(navigate);
       /* setRightButtonText("Logout"); */
     })
     .catch((err) => {
       console.log("Deu erro", err.response);
       alert("Erro no cadastro!", err.response.data.message);
+    });
+};
+
+export const registerAddres = (body, clear, navigate) => {
+  axios
+    .put(`${BASE_URL}/address`, body, {
+      headers: {
+        auth: localStorage.getItem("token"),
+      },
+    })
+    .then((res) => {
+      console.log("Deu certo", res);
+      alert(res.data);
+      clear();
+      goToHome(navigate);
+    })
+    .catch((err) => {
+      alert(err);
     });
 };

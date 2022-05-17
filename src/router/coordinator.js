@@ -29,3 +29,7 @@ export const goToDetailsPage = (navigate, id) => {
 export const goToBack = (navigate) => {
     navigate(-1)
 }
+
+export const goToRegistrarEndereço = (navigate) => {
+    navigate("user/adicionar-endereco")
+}
