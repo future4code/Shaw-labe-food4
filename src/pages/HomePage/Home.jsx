@@ -97,6 +97,7 @@ console.log(restaurantes)
             {mapeandoRestaurantes.length>0 ? mapeandoRestaurantes: <p>Loading ...</p>}
             <h3>Home</h3>
 
+
             {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
             return (
             <CardRestaurante
@@ -115,6 +116,7 @@ console.log(restaurantes)
             // nome = {restaurantes.name}
             // logo = {restaurantes.logoUrl}
             />
+
             
             </Cards>
         </MainContainerFeed>
