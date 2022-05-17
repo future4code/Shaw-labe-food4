@@ -24,7 +24,6 @@ const Router = () => {
         <Route path="/user/profile/eddit-address" element={<AddresEdditPage/>} />
         <Route path="/user/adicionar-endereco" element={<RegisterAddres />} />
         <Route path="/adicionar-endereco" element={<RegisterAddres />} />
-
       </Routes>
     
   );
