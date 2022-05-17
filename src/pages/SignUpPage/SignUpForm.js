@@ -6,10 +6,8 @@ import useForm from "../../hooks/useForm";
 import { signUp } from "../../services/user";
 import {
   H1Style,
-  H4Style,
   InputStyle,
   InputFather,
-  CheckboxStyle,
   PostButton,
   ButtonLetter,
 } from "./styled";
@@ -32,7 +30,7 @@ const SignUpForm = () => {
 
   return (
     <div>
-      <H1Style>Cadastrar)</H1Style>
+      <H1Style>Cadastrar</H1Style>
       <form onSubmit={onSubimitForm}>
         <InputFather>
           <InputStyle
@@ -79,7 +77,7 @@ const SignUpForm = () => {
       
         <center>
           <PostButton>
-            <ButtonLetter>Criar</ButtonLetter>
+            <ButtonLetter>Cadastrar</ButtonLetter>
           </PostButton>
         </center>
       </form>
