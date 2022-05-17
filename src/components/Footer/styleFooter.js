@@ -16,3 +16,8 @@ export const ContainerFooter = styled.div`
     }
     
 `
+export const ButtonFooter = styled(Button)`
+    width: 120px;
+    height: 49px;
+    padding: 10px 46px 9px 47px;
+`

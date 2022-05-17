@@ -31,6 +31,10 @@ export const goToRegistrarEndereço = (navigate) => {
     navigate("/adicionar-endereco")
 }
 
+export const goToCartPage = (navigate) => {
+    navigate("/cart")
+}
+
 export const goToBack = (navigate) => {
     navigate(-1)
 }
