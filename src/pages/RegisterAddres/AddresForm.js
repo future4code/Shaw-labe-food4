@@ -1,25 +1,20 @@
+import { TextField } from "@material-ui/core";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
-/* import useUnProtectedPage from "../../hooks/useUnprotectedPage"; */
 import { registerAddres } from "../../services/user";
-import {
-  H1Style,
-  InputStyle,
-  InputFather,
-  PostButton,
-  ButtonLetter,
-} from "./styled";
+import { PostButton, ButtonLetter, ImgSize } from "./styled";
+import logo from "../../assets/img/logo.png";
 
 const AddresForm = () => {
-  const [ form, onChange, clear ] = useForm({
+  const [form, onChange, clear] = useForm({
     name: "",
     email: "",
     cpf: "",
     password: "",
   });
   const navigate = useNavigate();
- /*  useUnProtectedPage(); */
+  /*  useUnProtectedPage(); */
 
   const onSubimitForm = (event) => {
     console.log(form);
@@ -29,19 +24,24 @@ const AddresForm = () => {
 
   return (
     <div>
-      <H1Style>Meu endereço</H1Style>
+      <ImgSize src={logo}/>
       <form onSubmit={onSubimitForm}>
-        <InputFather>
-          <InputStyle
+        <center>Meu endereço</center>
+        <div>
+          <TextField
             name="street"
             value={form.street}
             onChange={onChange}
             type="street"
-            size="30"
             placeholder="Logradouro"
             required
+            autoFocus
+            variant="outlined"
+            label="Logradouro"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="number"
             value={form.number}
             onChange={onChange}
@@ -49,8 +49,13 @@ const AddresForm = () => {
             size="30"
             placeholder="Número"
             required
+            autoFocus
+            variant="outlined"
+            label="Número"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="neighbourhood"
             value={form.neighbourhood}
             onChange={onChange}
@@ -60,8 +65,13 @@ const AddresForm = () => {
             /* pattern={"^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$"}
             title={"Digite um CPF válido"} */
             required
+            autoFocus
+            variant="outlined"
+            label="Bairro"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="city"
             value={form.city}
             onChange={onChange}
@@ -71,8 +81,13 @@ const AddresForm = () => {
             /* pattern={"[^ ]{8,16}"}
             title={"Sua senha deve ter no mínimo 8 caracteres"} */
             required
+            autoFocus
+            variant="outlined"
+            label="Cidade"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="state"
             value={form.state}
             onChange={onChange}
@@ -82,8 +97,13 @@ const AddresForm = () => {
             /* pattern={"[^ ]{8,16}"}
             title={"Sua senha deve ter no mínimo 8 caracteres"} */
             required
-            />
-           <InputStyle
+            autoFocus
+            variant="outlined"
+            label="Estado"
+            fullWidth
+            margin="normal"
+          />
+          <TextField
             name="complement"
             value={form.complement}
             onChange={onChange}
@@ -92,11 +112,14 @@ const AddresForm = () => {
             placeholder="Complemento"
             /* pattern={"[^ ]{8,16}"}
             title={"Sua senha deve ter no mínimo 8 caracteres"} */
+            autoFocus
+            variant="outlined"
+            label="Complemento"
+            fullWidth
+            margin="normal"
           />
-           
-          
-        </InputFather>
-      
+        </div>
+
         <center>
           <PostButton>
             <ButtonLetter>Criar</ButtonLetter>

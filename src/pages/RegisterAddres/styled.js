@@ -73,3 +73,8 @@ export const ButtonLetter = styled.div`
   order: 0;
   flex-grow: 0;
 `;
+
+export const ImgSize = styled.img`
+  width: 50%;
+  margin: 12vh;
+`
