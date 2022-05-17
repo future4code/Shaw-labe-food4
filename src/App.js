@@ -1,15 +1,14 @@
-import React from 'react';
-import Router from './router/Router';
-import Footer from './components/Footer/Footer';
-
+import React from "react";
+import Router from "./router/Router";
+import Footer from "./components/Footer/Footer";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-    <h1>LabeFood</h1>
-    <Footer/>
-    <Router/>
-    </div>
+    <BrowserRouter>
+    
+      <Router />
+    </BrowserRouter>
   );
 }
 

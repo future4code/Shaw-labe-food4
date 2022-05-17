@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../constants/BASE_URL"
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import { goToLoginPage } from "../../router/coordinator";
 import CardRestaurante from "../../components/CardRestaurante/CardRestaurante"
 
@@ -106,6 +107,7 @@ console.log(restaurantes)
             />
             )
             }) : <p>Loading ...</p>} */}
+
 
 
             {/* <h3>{restaurantes.name}</h3> */}
