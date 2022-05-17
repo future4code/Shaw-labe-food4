@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {BASE_URL} from '../../constants/BASE_URL'
 import useRequestData from '../../hooks/useRequestData'
+import CardOrderHistory from "../Profile/CardOrderHistory"
+import { CardName,CardAddress,Divgrey,DivHistory} from './styled'
 
 const Profile = () => {
   const [profile, setProfile] = useState({})
@@ -23,7 +25,6 @@ setProfile(res.data.user)
 })
 }
 
-
 const getAddress =()=>{
   const headers = {
     headers: {
@@ -33,7 +34,6 @@ const getAddress =()=>{
   axios
   .get(`${BASE_URL}/profile/address`, headers)
   .then((res)=>{
-
   setAddress(res.data.address)
   console.log(res.data.address)
   })
@@ -53,16 +53,23 @@ const getAddress =()=>{
 
   return (
     <>
-    <div>
+    <CardName>
       <p>{profile.name}</p>
       <p>{profile.email}</p>
       <p>{profile.cpf}</p>
-    </div>
+    </CardName>
     
-    <div>
+    <CardAddress>
       <p>Endereço Casdastrado</p>
       <p></p>
-    </div>
+    </CardAddress>
+    <p>Histórico de pedidos</p>
+    <Divgrey>
+    </Divgrey>
+    <DivHistory>
+    
+    <CardOrderHistory/>
+    </DivHistory>
     </>
   )
 }

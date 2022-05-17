@@ -1,23 +1,40 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {BASE_URL} from '../../constants/BASE_URL'
+import { BASE_URL } from '../../constants/BASE_URL'
+import {ContainerOrderHistory} from "./styled"
 
-const CardOrderHistory =()=>{
- const [orderHistorys, setOrderHistorys] = useState([])
+
+
+const CardOrderHistory = (props) => {
+
+    const [orderHistorys, setOrderHistorys] = useState({})
+
+    const getOrderHistory =()=>{
+        const headers = {
+          headers: {
+            auth : localStorage.getItem('token')
+          }
+        }
+        axios
+        .get(`${BASE_URL}/orders/history`, headers)
+        .then((res)=>{
     
-    const getOrderHistory=()=>{
+        console.log(res.data)
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+        }
+
+    useEffect(()=>{
+        getOrderHistory()
+    },[])
 
 
-
-
-
-    }
-
-
-    return(
-        <>
-        
-        </>
+    return (
+        <ContainerOrderHistory>
+            
+        </ContainerOrderHistory>
     )
 }
 export default CardOrderHistory
