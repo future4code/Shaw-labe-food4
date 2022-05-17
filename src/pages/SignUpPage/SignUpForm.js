@@ -4,19 +4,9 @@ import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../services/user";
 import { TextField } from "@material-ui/core";
-import { PostButton,ButtonLetter,ImgSize, InputSize} from "./styled";
-import logo from "../../assets/img/logo.png"
-
-/* Logica para esconder o password
-Abaixo todos os imports para ocultar/mostrar a senha com MUI
-import {
-  IconButton,
-  FilledInput,
-  InputLabel,
-  InputAdornment,
-  FormControl,
-} from "@material-ui/core";
-import { Visibility, VisibilityOff } from "@material-ui/icons"; */
+import { PostButton, ButtonLetter, ImgSize, InputSize } from "./styled";
+import logo from "../../assets/img/logo.png";
+import { InputPassword } from "../../components/InputChange/InputPassword";
 
 const SignUpForm = () => {
   const [form, onChange, clear] = useForm({
@@ -30,126 +20,78 @@ const SignUpForm = () => {
   const onSubimitForm = (event) => {
     console.log(form);
     event.preventDefault();
-    signUp(form, clear, navigate /* setRightButtonText */);
+    signUp(form, clear, navigate);
   };
-
- /*  Logica para esconder o password
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  }; */
 
   return (
     <div>
-      <ImgSize src={logo}/>
+      <ImgSize src={logo} />
       <form onSubmit={onSubimitForm}>
         <center>
           <p>Cadastrar</p>
           <InputSize>
-          <TextField
-            name="name"
-            value={form.name}
-            onChange={onChange}
-            type="text"
-            size="30"
-            placeholder="Nome de usuário"
-            required
-            autoFocus
-            variant="outlined"
-            label="Nome de usuário"
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            name="email"
-            value={form.email}
-            onChange={onChange}
-            type={"email"}
-            size="30"
-            placeholder="E-mail"
-            required
-            autoFocus
-            variant="outlined"
-            label="E-mail"
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            name="cpf"
-            value={form.cpf}
-            onChange={onChange}
-            type="number"
-            size="30"
-            placeholder="Cpf"
-            pattern={
-              "^([0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}|[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2})$"
-            }
-            title={"Digite um CPF válido"}
-            required
-            autoFocus
-            variant="outlined"
-            label="Cpf"
-            fullWidth
-            margin="normal"
-          />
-          <TextField
-            name="password"
-            value={form.password}
-            onChange={onChange}
-            type={"password"}
-            size="30"
-            placeholder="Senha"
-            required
-            autoFocus
-            variant="outlined"
-            label="Senha"
-            fullWidth
-            margin="normal"
-          />
-          </InputSize>
-
-          {/* Logica para esconder o password
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
-            <InputLabel htmlFor="filled-adornment-password">
-              Password
-            </InputLabel>
-            <FilledInput
-              id="filled-adornment-password"
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
-              onChange={handleChange("password")}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
+            <TextField
+              name="name"
+              value={form.name}
+              onChange={onChange}
+              type="text"
+              size="30"
+              placeholder="Nome de usuário"
+              required
+              autoFocus
+              variant="outlined"
+              label="Nome de usuário"
+              fullWidth
+              margin="normal"
             />
-          </FormControl> */}
+            <TextField
+              name="email"
+              value={form.email}
+              onChange={onChange}
+              type={"email"}
+              size="30"
+              placeholder="E-mail"
+              required
+              autoFocus
+              variant="outlined"
+              label="E-mail"
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              name="cpf"
+              value={form.cpf}
+              onChange={onChange}
+              type="number"
+              size="30"
+              placeholder="Cpf"
+              pattern={
+                "^([0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}|[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2})$"
+              }
+              title={"Digite um CPF válido"}
+              required
+              autoFocus
+              variant="outlined"
+              label="Cpf"
+              fullWidth
+              margin="normal"
+            />
+           {/*  <TextField
+              name="password"
+              value={form.password}
+              onChange={onChange}
+              type={"password"}
+              size="30"
+              placeholder="Senha"
+              required
+              autoFocus
+              variant="outlined"
+              label="Senha"
+              fullWidth
+              margin="normal"
+            /> */}
+            <InputPassword form={form} onChange={onChange} />
+          </InputSize>
         </center>
 
         <center>

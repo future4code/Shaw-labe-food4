@@ -8,12 +8,8 @@ import {
   ContainerTotal, FormOfPayment, FormPayment, H5Styled, InputStyled, LabelStyled, PAddress
 } from "../cartPage/styled";
 
-
-
 const CartPage = () => {
 
-  
- 
   const confirmPedido = () => {
     axios 
     .post(`${BASE_URL}/restaurants/order` )
