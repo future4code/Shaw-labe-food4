@@ -13,8 +13,14 @@ export const login = (
     .then((res) => {
       console.log("Deu certo", res);
       localStorage.setItem("token", res.data.token);
+      if (res.data.user.hasAddress === true){
+        navigate.push("/")
+        /* goToHome(navigate); */
+      } else {
+        navigate.push("user/adicionar-endereco")
+      }
       clear();
-      goToHome(navigate);
+      
       /* setRightButtonText("Logout"); */
       /* setIsLoading(false) */
     })
@@ -29,19 +35,20 @@ export const signUp = (body, clear, navigate /* setRightButtonText */) => {
   axios
     .post(`${BASE_URL}/signup`, body)
     .then((res) => {
-      console.log("Deu certo", res);
-      alert("Cadastro realizado com sucesso");
       localStorage.setItem("token", res.data.token);
+      console.log("Deu certo", res.data);
+      alert("Cadastro realizado com sucesso");
       clear();
-      goToRegistrarEndereço(navigate);
+      /* goToRegistrarEndereço(navigate); */
       /* setRightButtonText("Logout"); */
     })
     .catch((err) => {
       console.log("Deu erro", err.response);
-      alert("Erro no cadastro!", err.response.data.message);
+      alert("Erro no cadastro!", err.data);
     });
 };
 
+//requisição para registrar endereço 
 export const registerAddres = (body, clear, navigate) => {
   axios
     .put(`${BASE_URL}/address`, body, {
@@ -52,8 +59,8 @@ export const registerAddres = (body, clear, navigate) => {
     .then((res) => {
       console.log("Deu certo", res);
       alert(res.data);
-      clear();
       goToHome(navigate);
+      clear();
     })
     .catch((err) => {
       alert(err);
