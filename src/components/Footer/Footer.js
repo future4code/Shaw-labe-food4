@@ -5,6 +5,7 @@ import home from "../../assets/img/home.jpg";
 import profile from "../../assets/img/profile.jpg";
 import { goToHome, goToProfile } from '../../router/coordinator';
 import { ContainerFooter } from './styleFooter';
+
  
 
 const Footer = () => {
@@ -13,16 +14,15 @@ const Footer = () => {
 
   
 
- 
-
- 
+  
 
 
   return (
     <ContainerFooter>
-        <img onClick={()=>goToHome(navigate)} alt='icone-home' src={home} />
-        <img alt='icone=-carrinho' src={carrinho} />
-        <img onClick={()=>goToProfile(navigate)} alt='icone-perfil' src={profile} />
+        <img onClick={()=> goToHome(navigate)} alt='icone-home' src={home} />
+        <img alt='icone-carrinho' src={carrinho} />
+        <img onClick={()=> goToProfile(navigate)} alt='icone-perfil' src={profile} />
+
     </ContainerFooter>
   )
 }
