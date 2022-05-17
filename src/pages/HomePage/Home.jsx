@@ -97,8 +97,10 @@ console.log(restaurantes)
             {mapeandoRestaurantes.length>0 ? mapeandoRestaurantes: <p>Loading ...</p>}
             <h3>Home</h3>
 
+
             
             <CardRestaurante/>
+
 
             
             </Cards>
