@@ -29,6 +29,10 @@ const Header = () => {
         <Conteudo>
             <p>Meu Perfil</p>
         </Conteudo> : null}
+        {location.pathname === `/cart` ? 
+        <Conteudo>
+            <p>Meu Carrinho</p>
+        </Conteudo> : null}
     </MainContainer>
   )
 }

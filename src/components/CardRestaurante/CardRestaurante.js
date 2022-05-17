@@ -8,11 +8,11 @@ const CardRestaurante = (props) => {
         <Banner src={props.logo}/>
         <Conteudo>
             <p className='titulo'>{props.nome}</p>
-            Oiieieieiee
-            {/* <p>{props.restaurante.description}</p> */}
+            
+            <p>Frete: R${props.shipping}</p>
+            <p>{(props.deliveryTime)} min</p>
             {/* <p className='preco'>R${props.restaurante.price}0</p> */}
         </Conteudo>
-        <Botao>adicionar</Botao>
     </MainContainer>
   )
 }

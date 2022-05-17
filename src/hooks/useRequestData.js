@@ -26,4 +26,4 @@ const useRequestData = (initialData, url) => {
   return [data, getData]
 }
 
-export default useRequestData
+export default useRequestData;

@@ -4,7 +4,7 @@ import { BASE_URL } from '../../constants/BASE_URL'
 import CardOrderHistory from "../Profile/CardOrderHistory"
 import { MainProfile, ContainerCardName, ContainerButtonName, CardName, ContainerCardAddress, CardAddress, ContainerButtonAdress, Divgrey, DivHistory } from './styled'
 import { ImPencil } from "react-icons/im"
-import { goToEdditAddress,goToEdditProfile } from '../../router/coordinator'
+import { goToRegistrarEndereço,goToEdditProfile } from '../../router/coordinator'
 import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
@@ -56,7 +56,7 @@ const Profile = () => {
           <p>{profile.address && profile.address}</p>
         </CardAddress>
         <ContainerButtonAdress>
-          <ImPencil onClick={()=>goToEdditAddress(navigate)} />
+          <ImPencil onClick={()=>goToRegistrarEndereço(navigate)} />
         </ContainerButtonAdress>
       </ContainerCardAddress>
       <p>Histórico de pedidos</p>

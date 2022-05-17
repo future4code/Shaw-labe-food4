@@ -10,19 +10,11 @@ import { Cards, MainContainerFeed } from "./styled";
 import Header from "../../components/Header/Header";
 
 
-const CreatingPost = styled.div``;
-// const CardRestaurante = styled.div`
-// `
-// let iconStyles = { color: "#7869bf", fontSize: "2em", cursor: "pointer" };
-// ----------------------------------------------------------------------------
-
+const CreatingPost = styled.div`
+`
 const Home = () => {
   const [restaurantes, setRestaurantes] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getRestaurants();
-  }, []);
 
   const getRestaurants = () => {
     const tokenTeste =
@@ -45,17 +37,24 @@ const Home = () => {
       });
   };
 
-  const mapeandoRestaurantes = restaurantes.map((restaurante) => {
+  useEffect(()=>{
+    getRestaurants()
+  },[])
+
+  const mapeandoRestaurantes = restaurantes.map((restaurante)=>{
     return (
       <CardRestaurante
         Entrar={()=>goToRestaurante(navigate,restaurante.id)}
-        key={restaurante.id}
-        restaurante={restaurante}
-        nome={restaurante.name}
-        logo={restaurante.logoUrl}
+        key = {restaurante.id}
+        restaurante = {restaurante}
+        nome = {restaurante.name}
+        logo = {restaurante.logoUrl}
+        description = {restaurante.description}
+        shipping = {restaurante.shipping}
+        deliveryTime = {restaurante.deliveryTime}
       />
-    );
-  });
+      )
+  })
 
   console.log(restaurantes);
   return (
@@ -69,7 +68,9 @@ const Home = () => {
           <p>Loading ...</p>
         )}
         <h3>Home</h3>
-        {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
+        {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{           
+            <CardRestaurante/>
+            {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
             return (
             <CardRestaurante
             key = {restaurante.id}
