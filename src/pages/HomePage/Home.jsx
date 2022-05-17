@@ -24,6 +24,8 @@ const Cards = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 24px;
+    width: 100%;
+
 `
 
 const CreatingPost = styled.div`
@@ -82,6 +84,9 @@ const Home = () => {
         restaurante = {restaurante}
         nome = {restaurante.name}
         logo = {restaurante.logoUrl}
+        description = {restaurante.description}
+        shipping = {restaurante.shipping}
+        deliveryTime = {restaurante.deliveryTime}
         />
         )
     })
@@ -97,6 +102,10 @@ console.log(restaurantes)
             {mapeandoRestaurantes.length>0 ? mapeandoRestaurantes: <p>Loading ...</p>}
             <h3>Home</h3>
 
+<<<<<<< HEAD
+            
+            <CardRestaurante/>
+=======
             {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
             return (
             <CardRestaurante
@@ -115,6 +124,7 @@ console.log(restaurantes)
             // nome = {restaurantes.name}
             // logo = {restaurantes.logoUrl}
             />
+>>>>>>> 25485c331b126ec54c595913cfbe927b3a396341
             
             </Cards>
         </MainContainerFeed>
