@@ -16,7 +16,7 @@ export const goToLoginPage = (navigate) => {
     navigate("/login")
 }
 export const goToSignupPage = (navigate) => {
-    navigate("/user/signup")
+    navigate("/signup")
 }
 
 export const goToProfile = (navigate) => {
@@ -28,11 +28,21 @@ export const goToDetailsPage = (navigate, id) => {
 }
 
 export const goToRegistrarEndereço = (navigate) => {
-    navigate("user/adicionar-endereco")
+    navigate("/adicionar-endereco")
+}
+
+export const goToCartPage = (navigate) => {
+    navigate("/cart")
 }
 
 export const goToBack = (navigate) => {
     navigate(-1)
+}
+export const goToEdditProfile = (navigate) => {
+    navigate("/user/profile/eddit-profile")
+}
+export const goToEdditAddress = (navigate) => {
+    navigate("/user/profile/eddit-address")
 }
 
 

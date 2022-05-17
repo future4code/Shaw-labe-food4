@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../constants/BASE_URL"
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import { goToLoginPage } from "../../router/coordinator";
 import CardRestaurante from "../../components/CardRestaurante/CardRestaurante"
 
@@ -101,8 +102,29 @@ console.log(restaurantes)
             {mapeandoRestaurantes.length>0 ? mapeandoRestaurantes: <p>Loading ...</p>}
             <h3>Home</h3>
 
+<<<<<<< HEAD
             
             <CardRestaurante/>
+=======
+            {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
+            return (
+            <CardRestaurante
+            key = {restaurante.id}
+            restaurante = {restaurante}
+            nome = {restaurante.name}
+            logo = {restaurante.logoUrl}
+            />
+            )
+            }) : <p>Loading ...</p>} */}
+
+
+
+            {/* <h3>{restaurantes.name}</h3> */}
+            <CardRestaurante 
+            // nome = {restaurantes.name}
+            // logo = {restaurantes.logoUrl}
+            />
+>>>>>>> 25485c331b126ec54c595913cfbe927b3a396341
             
             </Cards>
         </MainContainerFeed>
