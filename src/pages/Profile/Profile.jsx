@@ -29,12 +29,9 @@ const Profile = () => {
       })
   }
 
- 
-
   useEffect(() => {
     getProfile()
   }, [])
-
 
   return (
     <MainProfile>

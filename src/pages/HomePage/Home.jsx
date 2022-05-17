@@ -66,11 +66,8 @@ const Home = () => {
           mapeandoRestaurantes
         ) : (
           <p>Loading ...</p>
-        )}
-        <h3>Home</h3>
-        {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{           
-            <CardRestaurante/>
-            {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
+        )}  
+         {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
             return (
             <CardRestaurante
             key = {restaurante.id}

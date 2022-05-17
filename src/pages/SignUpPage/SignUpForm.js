@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../services/user";
 import { TextField } from "@material-ui/core";
-import { PostButton,ButtonLetter,ImgSize} from "./styled";
+import { PostButton,ButtonLetter,ImgSize, InputSize} from "./styled";
 import logo from "../../assets/img/logo.png"
 
 /* Logica para esconder o password
@@ -63,6 +63,7 @@ const SignUpForm = () => {
       <form onSubmit={onSubimitForm}>
         <center>
           <p>Cadastrar</p>
+          <InputSize>
           <TextField
             name="name"
             value={form.name}
@@ -123,6 +124,7 @@ const SignUpForm = () => {
             fullWidth
             margin="normal"
           />
+          </InputSize>
 
           {/* Logica para esconder o password
           <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">

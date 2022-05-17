@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const H4Style = styled.h6`
-  margin-left: 8%;
-  margin-right: 8%;
-  margin-bottom: 1vh;
-  justify-content: flex-start;
-`;
+export const InputSize = styled.div`
+  width: 90%;
+`
 
 export const PostButton = styled.button`
   display: flex;
