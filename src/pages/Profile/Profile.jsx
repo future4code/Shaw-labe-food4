@@ -6,6 +6,8 @@ import { MainProfile, ContainerCardName, ContainerButtonName, CardName, Containe
 import { ImPencil } from "react-icons/im"
 import { goToEdditAddress,goToEdditProfile } from '../../router/coordinator'
 import { useNavigate } from 'react-router-dom'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 const Profile = () => {
   const [profile, setProfile] = useState({})
@@ -36,6 +38,7 @@ const Profile = () => {
 
   return (
     <MainProfile>
+      <Header/>
       <ContainerCardName>
         <CardName>
           <p>{profile.name && profile.name}</p>
@@ -64,6 +67,7 @@ const Profile = () => {
       <DivHistory>
         <CardOrderHistory />
       </DivHistory>
+      <Footer/>
     </MainProfile>
   )
 }

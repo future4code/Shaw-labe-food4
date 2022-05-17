@@ -10,9 +10,9 @@ export const ContainerFooter = styled.div`
     bottom: 0;
     height: 7vh;
     box-shadow: 0px 0px 5px black;
+    background-color: white;
     img{
       width: 50px;
-
     }
     
 `

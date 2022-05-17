@@ -7,12 +7,18 @@ export const MainContainer = styled.div`
     font-family: 'Roboto', sans-serif;
     position: relative;
     overflow: hidden;
+    .categoria{
+        width: 95%;
+        padding: 5px 0;
+        border-bottom: 2px solid black;
+    }
 `
 export const Local = styled.div`
     display: flex;
     flex-flow: column;
-    width: 95%;
+    width: 90%;
     color: #D1D1D6;
+    margin-top: 20px;
     p{
         margin: 5px 15px;
         margin-left: 0;
@@ -28,7 +34,6 @@ export const Banner = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    z-index: 1;
     position: relative;
     width: 100%;
     height: 150px;
