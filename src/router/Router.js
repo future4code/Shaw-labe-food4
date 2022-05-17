@@ -13,18 +13,20 @@ import AddresEdditPage from "../pages/Profile/AddresEdditPage";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route index element={<Home />} />
         <Route path="/restaurante" element={<Restaurante />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/user/signup" element={<SignupPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/user/profile" element={<Profile />} />
         <Route path="/user/profile/eddit-profile" element={<ProfileEdditPage/>} />
         <Route path="/user/profile/eddit-address" element={<AddresEdditPage/>} />
         <Route path="/user/adicionar-endereco" element={<RegisterAddres />} />
+        <Route path="/adicionar-endereco" element={<RegisterAddres />} />
+
       </Routes>
-    </BrowserRouter>
+    
   );
 };
 export default Router;

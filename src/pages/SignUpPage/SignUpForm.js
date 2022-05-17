@@ -1,8 +1,7 @@
-
-import React from "react";
+/* import useUnProtectedPage from "../../hooks/useUnprotectedPage"; */
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
-/* import useUnProtectedPage from "../../hooks/useUnprotectedPage"; */
 import { signUp } from "../../services/user";
 import {
   H1Style,
@@ -13,19 +12,20 @@ import {
 } from "./styled";
 
 const SignUpForm = () => {
-  const [ form, onChange, clear ] = useForm({
+  const [form, onChange, clear] = useForm({
     name: "",
     email: "",
     cpf: "",
     password: "",
   });
   const navigate = useNavigate();
- /*  useUnProtectedPage(); */
+  /*  useUnProtectedPage(); */
+  const [confirm, setConfirm] = useState("")
 
   const onSubimitForm = (event) => {
     console.log(form);
     event.preventDefault();
-    signUp(form, clear, navigate /* setRightButtonText */);
+    signUp(form, clear, navigate/* setRightButtonText */);
   };
 
   return (
@@ -58,7 +58,9 @@ const SignUpForm = () => {
             type="number"
             size="30"
             placeholder="Cpf"
-            pattern={"^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$"}
+            pattern={
+              "^([0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}|[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2})$"
+            }
             title={"Digite um CPF válido"}
             required
           />
@@ -74,7 +76,7 @@ const SignUpForm = () => {
             required
           />
         </InputFather>
-      
+
         <center>
           <PostButton>
             <ButtonLetter>Cadastrar</ButtonLetter>
