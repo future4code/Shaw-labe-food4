@@ -34,5 +34,11 @@ export const goToRegistrarEndereço = (navigate) => {
 export const goToBack = (navigate) => {
     navigate(-1)
 }
+export const goToEdditProfile = (navigate) => {
+    navigate("/user/profile/eddit-profile")
+}
+export const goToEdditAddress = (navigate) => {
+    navigate("/user/profile/eddit-address")
+}
 
 
