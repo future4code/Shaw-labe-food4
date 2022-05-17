@@ -24,12 +24,15 @@ export const goToEditarCadastro = (navigate) => {
 }
 
 export const goToDetailsPage = (navigate, id) => {
-    navigate(`/restaurante/details/${id}`)
-}
-export const goToBack = (navigate) => {
-    navigate(-1)
+    navigate(`/restaurante/details/${id}`) 
 }
 
 export const goToRegistrarEndereço = (navigate) => {
     navigate("user/adicionar-endereco")
 }
+
+export const goToBack = (navigate) => {
+    navigate(-1)
+}
+
+

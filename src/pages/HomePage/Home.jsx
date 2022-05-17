@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { goToLoginPage } from "../../router/coordinator";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const navigate = useNavigate();
 
-export default Home
+  const onClickLogin = () => {
+    goToLoginPage(navigate);
+  };
+
+  return (
+    <div>
+      <div>Home</div>
+      <button onClick={onClickLogin}>LOGIN</button>
+    </div>
+  );
+};
+
+export default Home;
