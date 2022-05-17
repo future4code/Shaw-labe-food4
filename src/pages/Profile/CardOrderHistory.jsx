@@ -30,7 +30,6 @@ const CardOrderHistory = (props) => {
         getOrderHistory()
     },[])
 
-
     return (
         <ContainerOrderHistory>
             

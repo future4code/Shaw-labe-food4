@@ -7,6 +7,9 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import Profile from "../pages/Profile/Profile";
 import SignupPage from "../pages/SignUpPage/SignUpPage";
 import RegisterAddres from "../pages/RegisterAddres/RegisterAddres";
+import ProfileEdditPage from "../pages/Profile/ProfileEdditPage";
+import AddresEdditPage from "../pages/Profile/AddresEdditPage";
+
 
 const Router = () => {
   return (
@@ -17,8 +20,11 @@ const Router = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/user/profile" element={<Profile />} />
+        <Route path="/user/profile/eddit-profile" element={<ProfileEdditPage/>} />
+        <Route path="/user/profile/eddit-address" element={<AddresEdditPage/>} />
+        <Route path="/user/adicionar-endereco" element={<RegisterAddres />} />
         <Route path="/adicionar-endereco" element={<RegisterAddres />} />
-        {/* <Route path ="" element={""}/> */}
+
       </Routes>
     
   );
