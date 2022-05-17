@@ -10,7 +10,7 @@ import RegisterAddres from "../pages/RegisterAddres/RegisterAddres";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route index element={<Home />} />
         <Route path="/restaurante" element={<Restaurante />} />
@@ -20,7 +20,7 @@ const Router = () => {
         <Route path="/adicionar-endereco" element={<RegisterAddres />} />
         {/* <Route path ="" element={""}/> */}
       </Routes>
-    </BrowserRouter>
+    
   );
 };
 export default Router;
