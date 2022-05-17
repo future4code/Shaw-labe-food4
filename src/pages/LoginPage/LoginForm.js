@@ -2,7 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { login } from "../../services/user";
-import { InputStyle, PostButton, ButtonLetter } from "./styled";
+import { PostButton, ButtonLetter, ImgSize } from "./styled";
+import { TextField } from "@material-ui/core";
+import logo from "../../assets/img/logo.png"
 
 const LoginForm = () => {
   const [form, onChange, clear] = useForm({ email: "", password: "" });
@@ -15,21 +17,33 @@ const LoginForm = () => {
 
   return (
     <center>
+      <ImgSize src={logo}/>
       <form onSubmit={onSubimitForm}>
-        <InputStyle
+        <TextField
+          autoFocus
+          fullWidth
+          variant="outlined"
+          label="email"
+          
           name="email"
           value={form.email}
           onChange={onChange}
           type={"email"}
-          size="30"
           placeholder="E-mail*"
           required
+          margin="normal"
         />
-        <InputStyle
+        <TextField
+          autoFocus
+          variant="outlined"
+          label="Senha"
+          fullWidth
+          margin="normal"
+
           name="password"
           value={form.password}
           onChange={onChange}
-          type="password"
+          type={"password"}
           size="30"
           placeholder="Senha*"
           required
