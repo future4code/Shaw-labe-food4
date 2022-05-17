@@ -19,8 +19,8 @@ export const goToSignupPage = (navigate) => {
     navigate("/user/signup")
 }
 
-export const goToEditarCadastro = (navigate) => {
-    navigate("/user/editar-cadastro")
+export const goToProfile = (navigate) => {
+    navigate("/user/profile")
 }
 
 export const goToDetailsPage = (navigate, id) => {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {BASE_URL} from '../../constants/BASE_URL'
 import useRequestData from '../../hooks/useRequestData'
 
-const EditarCadastro = () => {
+const Profile = () => {
   const [profile, setProfile] = useState({})
   const [address, setAddress] = useState({})
 
@@ -66,4 +66,4 @@ const getAddress =()=>{
     </>
   )
 }
-export default EditarCadastro
+export default Profile
