@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "../pages/HomePage/Home";
 import Restaurante from "../pages/Restaurante/Restaurante";
+
 import LoginPage from "../pages/LoginPage/LoginPage";
 import EditarCadastro from "../pages/SignUpPage/SignUpPage";
 import SignupPage from "../pages/SignUpPage/SignUpPage";
@@ -23,3 +24,4 @@ const Router = () => {
   );
 };
 export default Router;
+
