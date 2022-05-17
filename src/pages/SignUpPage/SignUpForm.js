@@ -3,13 +3,20 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../services/user";
+import { TextField } from "@material-ui/core";
+import { PostButton,ButtonLetter,ImgSize} from "./styled";
+import logo from "../../assets/img/logo.png"
+
+/* Logica para esconder o password
+Abaixo todos os imports para ocultar/mostrar a senha com MUI
 import {
-  H1Style,
-  InputStyle,
-  InputFather,
-  PostButton,
-  ButtonLetter,
-} from "./styled";
+  IconButton,
+  FilledInput,
+  InputLabel,
+  InputAdornment,
+  FormControl,
+} from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons"; */
 
 const SignUpForm = () => {
   const [form, onChange, clear] = useForm({
@@ -19,21 +26,44 @@ const SignUpForm = () => {
     password: "",
   });
   const navigate = useNavigate();
-  /*  useUnProtectedPage(); */
-  const [confirm, setConfirm] = useState("")
 
   const onSubimitForm = (event) => {
     console.log(form);
     event.preventDefault();
-    signUp(form, clear, navigate/* setRightButtonText */);
+    signUp(form, clear, navigate /* setRightButtonText */);
   };
+
+ /*  Logica para esconder o password
+  const [values, setValues] = React.useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  }; */
 
   return (
     <div>
-      <H1Style>Cadastrar</H1Style>
+      <ImgSize src={logo}/>
       <form onSubmit={onSubimitForm}>
-        <InputFather>
-          <InputStyle
+        <center>
+          <p>Cadastrar</p>
+          <TextField
             name="name"
             value={form.name}
             onChange={onChange}
@@ -41,8 +71,13 @@ const SignUpForm = () => {
             size="30"
             placeholder="Nome de usuário"
             required
+            autoFocus
+            variant="outlined"
+            label="Nome de usuário"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="email"
             value={form.email}
             onChange={onChange}
@@ -50,8 +85,13 @@ const SignUpForm = () => {
             size="30"
             placeholder="E-mail"
             required
+            autoFocus
+            variant="outlined"
+            label="E-mail"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="cpf"
             value={form.cpf}
             onChange={onChange}
@@ -63,19 +103,52 @@ const SignUpForm = () => {
             }
             title={"Digite um CPF válido"}
             required
+            autoFocus
+            variant="outlined"
+            label="Cpf"
+            fullWidth
+            margin="normal"
           />
-          <InputStyle
+          <TextField
             name="password"
             value={form.password}
             onChange={onChange}
-            type="password"
+            type={"password"}
             size="30"
             placeholder="Senha"
-            /* pattern={"[^ ]{8,16}"}
-            title={"Sua senha deve ter no mínimo 8 caracteres"} */
             required
+            autoFocus
+            variant="outlined"
+            label="Senha"
+            fullWidth
+            margin="normal"
           />
-        </InputFather>
+
+          {/* Logica para esconder o password
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+            <InputLabel htmlFor="filled-adornment-password">
+              Password
+            </InputLabel>
+            <FilledInput
+              id="filled-adornment-password"
+              type={values.showPassword ? "text" : "password"}
+              value={values.password}
+              onChange={handleChange("password")}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </FormControl> */}
+        </center>
 
         <center>
           <PostButton>

@@ -1,45 +1,6 @@
 import styled from "styled-components";
 
-export const InputFather = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-`;
-
-export const InputStyle = styled.input`
-  display: flex;
-  flex-direction: column;
-  margin: 1vh;
-  height: 8vh;
-  width: 90%;
-  box-sizing: border-box;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: #ffffff;
-  border: 1px solid #d5d8de;
-  border-radius: 4px;
-`;
-
-export const H1Style = styled.h1`
-  margin-left: 1%;
-  margin-bottom: 18vh;
-`;
-
 export const H4Style = styled.h6`
-  margin-left: 8%;
-  margin-right: 8%;
-  margin-bottom: 1vh;
-  justify-content: flex-start;
-`;
-
-export const CheckboxStyle = styled.div`
-  display: flex;
   margin-left: 8%;
   margin-right: 8%;
   margin-bottom: 1vh;
@@ -73,3 +34,8 @@ export const ButtonLetter = styled.div`
   order: 0;
   flex-grow: 0;
 `;
+
+export const ImgSize = styled.img`
+  width: 50%;
+  margin: 12vh;
+`

@@ -7,8 +7,6 @@ import Footer from "../../components/Footer/Footer";
 import { goToLoginPage } from "../../router/coordinator";
 import CardRestaurante from "../../components/CardRestaurante/CardRestaurante"
 
-
-
 const MainContainerFeed = styled.div`
     width: 100%;
     max-width: 350px;
@@ -38,7 +36,6 @@ const CreatingPost = styled.div`
 
 
 // ----------------------------------------------------------------------------
-
 
 
 const Home = () => {
@@ -76,7 +73,6 @@ const Home = () => {
         })
     }
 
-
     const mapeandoRestaurantes = restaurantes.map((restaurante)=>{
         return (
         <CardRestaurante
@@ -90,7 +86,6 @@ const Home = () => {
         />
         )
     })
-
 
 console.log(restaurantes)
     return (
