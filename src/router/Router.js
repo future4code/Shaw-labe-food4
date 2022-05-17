@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "../pages/HomePage/Home";
 import Restaurante from "../pages/Restaurante/Restaurante";
 
@@ -7,10 +7,11 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import Profile from "../pages/Profile/Profile";
 import SignupPage from "../pages/SignUpPage/SignUpPage";
 import RegisterAddres from "../pages/RegisterAddres/RegisterAddres";
+import CartPage from "../pages/cartPage/CartPage"
 
 const Router = () => {
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route index element={<Home />} />
         <Route path="/restaurante" element={<Restaurante />} />
@@ -19,8 +20,13 @@ const Router = () => {
         <Route path="/user/profile" element={<Profile />} />
         <Route path="/user/adicionar-endereco" element={<RegisterAddres />} />
         {/* <Route path ="" element={""}/> */}
+
+
+
+
+        <Route path="/cart" element={<CartPage/>} />
       </Routes>
-    </BrowserRouter>
+    
   );
 };
 export default Router;
