@@ -38,15 +38,16 @@ export const SignUpButton = styled.button`
 
 export const InputSize = styled.div`
   width: 90%;
-  
-    
-  
 `
 
 export const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
+`
+
+export const ButtonFather = styled.div`
+  display: flex;
+  align-items: center;
 `
 

@@ -2,9 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { login } from "../../services/user";
-import { PostButton, ImgSize, FormStyle } from "./styled";
+import { PostButton, ImgSize, FormStyle, ButtonFather } from "./styled";
 import { TextField } from "@material-ui/core";
 import logo from "../../assets/img/logo.png"
+import { InputPassword } from "../../components/InputChange/InputPassword";
+
 
 const LoginForm = () => {
   const [form, onChange, clear] = useForm({ email: "", password: "" });
@@ -16,7 +18,7 @@ const LoginForm = () => {
   };
 
   return (
-    <center>
+    <div>
       <ImgSize src={logo}/>
       <FormStyle onSubmit={onSubimitForm}>
         <TextField
@@ -33,7 +35,7 @@ const LoginForm = () => {
           required
           margin="normal"
         />
-        <TextField
+       {/*  <TextField
           autoFocus
           variant="outlined"
           label="Senha"
@@ -47,11 +49,12 @@ const LoginForm = () => {
           size="30"
           placeholder="Senha*"
           required
-        />
-        <PostButton>Continuar</PostButton>
+        /> */}
+        <InputPassword form={form} onChange={onChange} />
+       <ButtonFather> <PostButton>Continuar</PostButton> </ButtonFather>
         
       </FormStyle>
-    </center>
+    </div>
   );
 };
 
