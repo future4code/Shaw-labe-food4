@@ -2,16 +2,18 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 95%;
-    min-height: 120px;
+    width: 99%;
+    max-width: px;
+    /* max-height: 250px; */
     background-color: white;
-    border: 1px solid #C7C7CC;
+    border: 0.8px solid #C7C7CC;
     border-radius: 16px;
-    margin: 5px 0;
+    /* margin: 5px 0; */
     word-wrap: break-word;
     color: #D1D1D6;
-    position: relative;
+    /* position: relative; */
     p{
         margin: 4px 0px;
         margin-left: 10px;
@@ -26,14 +28,14 @@ export const MainContainer = styled.div`
 export const Conteudo = styled.div`
     display: flex;
     flex-flow: column;
-    width: 65%;
+    width: 100%;
 `
 export const Banner = styled.div`
     display: flex;
     flex-flow: column;
-    width: 35%;
+    width: 100%;
     height: 120px;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 16px 16px 0px 0px;
     background-image: url(${(props) => props.src});
     background-position: center;
     background-size: cover;
