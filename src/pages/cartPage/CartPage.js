@@ -9,6 +9,7 @@ import {  Button,  CartContainer,  ContainerAddress,
         InputStyled,  LabelStyled,  PAddress,} from "./styled";
 
 const CartPage = () => {
+
   const confirmPedido = () => {
     axios
       .post(`${BASE_URL}/restaurants/order`)

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const InputSize = styled.div`
+  
   width: 90%;
 `
 

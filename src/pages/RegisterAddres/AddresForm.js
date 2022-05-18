@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { registerAddres } from "../../services/user";
-import { PostButton, ButtonLetter, ImgSize, InputSize } from "./styled";
+import { PostButton, ImgSize, InputSize } from "./styled";
 import logo from "../../assets/img/logo.png";
 
 const AddresForm = () => {
