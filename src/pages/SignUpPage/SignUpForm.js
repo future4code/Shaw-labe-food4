@@ -76,7 +76,7 @@ const SignUpForm = () => {
               fullWidth
               margin="normal"
             />
-           {/*  <TextField
+            {/*  <TextField
               name="password"
               value={form.password}
               onChange={onChange}
@@ -95,10 +95,9 @@ const SignUpForm = () => {
         </center>
 
         <center>
-          <PostButton>
-            <ButtonLetter>Cadastrar</ButtonLetter>
-          </PostButton>
+          <PostButton>Cadastrar</PostButton>
         </center>
+        
       </form>
     </div>
   );
