@@ -14,6 +14,7 @@ justify-content: space-between;
 `
 export const CardName =styled.div`
 width: 90%;
+padding-left: 1em;
 `
 export const ContainerButtonName=styled.div`
 width: 10%;
@@ -22,14 +23,17 @@ align-items: center;
 `
 export const ContainerCardAddress =styled.div`
 display: flex;
+
 `
 export const CardAddress =styled.div`
 display: flex;
 flex-direction: column;
 background-color:#eeeeee ;
 width: 90%;
+padding-left:1em;
 span{
     color:#c7c7cc
+
 }
 `
 export const ContainerButtonAdress =styled.div`
@@ -44,15 +48,15 @@ flex-direction: column;
 align-items: center;
 
 `
+export const Orderhistory =styled.p`
+width: 96%;
+border-bottom: 2px solid grey;
+font-weight: 550;
+margin-left: 0.5em;
+`;
 
-export const Divgrey =styled.div`
-border: 0.5px solid #8e8e93;
-display: flex;
-width: 95%;
-margin-bottom: 1em;
-
-`
 // component CardOrder
+
 export const ContainerOrderHistory=styled.div`
 display: flex;
 flex-direction: column;
@@ -70,7 +74,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 width:100%;
-min-height: 80vh;
+
 `
 export const ProfileEdditForm=styled.form`
 display: flex;

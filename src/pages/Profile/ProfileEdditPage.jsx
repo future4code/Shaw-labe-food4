@@ -6,6 +6,7 @@ import { TextField } from "@material-ui/core";
 import {goToProfile} from "../../router/coordinator"
 import axios from 'axios'
 import {useNavigate} from "react-router-dom"
+import Header from '../../components/Header/Header';
 
 const ProfileEdditPage = () => {
 const navigate = useNavigate()
@@ -39,6 +40,7 @@ const navigate = useNavigate()
 
   return (
     <ContainerProfileEddit>
+      <Header/>
       <ProfileEdditForm onSubmit={onSubmit}>
         <TextField
           placeholder='Nome'
@@ -67,6 +69,7 @@ const navigate = useNavigate()
           margin="normal"
         />
         <TextField
+        color='warning'
           placeholder='CPF'
           value={form.cpf}
           onChange={onChange}
@@ -79,7 +82,7 @@ const navigate = useNavigate()
           fullWidth
           margin="normal"
         />
-        <PostButton> Enviar</PostButton>
+        <PostButton>Salvar</PostButton>
 
       </ProfileEdditForm>
     </ContainerProfileEddit>

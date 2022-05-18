@@ -33,6 +33,10 @@ const Header = () => {
         <Conteudo>
             <p>Meu Carrinho</p>
         </Conteudo> : null}
+        {location.pathname === `/user/profile/eddit-profile` ? 
+        <Conteudo>
+            <p>Editar cadastro</p>
+        </Conteudo> : null}
     </MainContainer>
   )
 }
