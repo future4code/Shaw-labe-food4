@@ -16,14 +16,21 @@ export const ContainerAddress = styled.div`
   height: 10vh;
 `;
 export const PAddress = styled.p`
+  margin: 2px;
   color: lightgrey;
   font-size: 16px;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 1px;
-  margin-left: 10px;
+  padding-left: 1em;
   gap: 5px;
+`;
+export const ProfileAdress=styled.p`
+margin:2px;
+font-weight: bold;
+padding-left: 1em;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 `;
 export const Address = styled.p`
   color: black;
