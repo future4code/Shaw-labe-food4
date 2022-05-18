@@ -18,8 +18,16 @@ import styled from "styled-components"
     /* background-color: lightgrey; */
   `
 
- const Slide = () => {
- 
+ const Slide = (props) => {
+
+    const mapeandoCategoria = props.restaurantes.map((categoria)=>{
+      return (
+            <Categoria onClick={()=>props.filtroCategoria(categoria.category)}>
+              {categoria.category}
+            </Categoria>
+      )
+    })
+
     const settings = {
       dots: false,
       infinite: false,
@@ -32,21 +40,7 @@ import styled from "styled-components"
       <div>
         <SlideContainer>
           <Slider {...settings}>
-            <Categoria>
-              Massas
-            </Categoria>
-            <Categoria>
-              Árabe
-            </Categoria>
-            <Categoria>
-              Mexicana
-            </Categoria>
-            <Categoria>
-              Francesa
-            </Categoria>
-            <Categoria>
-              Brasileira
-            </Categoria>
+            {mapeandoCategoria}
           </Slider>
         </SlideContainer>
         
