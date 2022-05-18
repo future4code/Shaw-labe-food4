@@ -9,6 +9,8 @@ import {  Button,  CartContainer,  ContainerAddress,
         ContainerH5,  ContainerPrice,  ContainerTotal,
         FormOfPayment,  FormPayment,  H5Styled,
         InputStyled,  LabelStyled,  PAddress,} from "./styled";
+import useRequestData from "../../hooks/useRequestData"
+
 
 const CartPage = () => {
   const [rests,setRests] = useState()
@@ -32,6 +34,8 @@ const CartPage = () => {
   })
   console.log(restaurant)
 
+  const [profile, getProfile] = useRequestData([],`${BASE_URL}/profile`)
+  console.log(profile)
   const confirmPedido = () => {
     axios
       .post(`${BASE_URL}/restaurants/order`)
