@@ -4,17 +4,23 @@ import styled from "styled-components";
 
 export const ContainerFooter = styled.div`
     display: flex;
-    width: 100%;
-    justify-content:space-around;
+    width: 100vw;
+    align-items: center;
     position: fixed;
     bottom: 0;
     height: 7vh;
     box-shadow: 0px 0px 5px black;
+    background-color: white;
     img{
       width: 50px;
-
+      height: 50px;
     }
-    
+    div{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content:space-around;
+    }
 `
 export const ButtonFooter = styled(Button)`
     width: 120px;

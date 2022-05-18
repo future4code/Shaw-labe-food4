@@ -4,7 +4,7 @@ import { Banner, Botao, Conteudo, MainContainer } from './styled'
 const CardRestaurante = (props) => {
     console.log(props)
   return (
-    <MainContainer>
+    <MainContainer onClick={props.Entrar}>
         <Banner src={props.logo}/>
         <Conteudo>
             <p className='titulo'>{props.nome}</p>
