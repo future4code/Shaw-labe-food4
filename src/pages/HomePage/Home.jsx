@@ -17,6 +17,7 @@ margin: 6px;
 const Home = () => {
   const [restaurantes, setRestaurantes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("")
+  const [filtrandoCategoria, setFiltrandoCategoria] = useState("")
   const navigate = useNavigate();
 
   const getRestaurants = () => {
@@ -44,13 +45,9 @@ const Home = () => {
     getRestaurants()
   },[])
 
-  const mapeandoRestaurantes = restaurantes.filter((restaurante)=>{
-    if(searchTerm == ""){
-      return restaurante
-    } else if(restaurante.name.toLowerCase().includes(searchTerm.toLowerCase())){
-      return restaurante
-    }
-  })
+  const mapeandoRestaurantes = restaurantes
+  .filter((restaurante)=>searchTerm? restaurante.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
+  .filter((restaurante)=>filtrandoCategoria? restaurante.category.toLowerCase().includes(filtrandoCategoria.toLocaleLowerCase()) : true)
   .map((restaurante)=>{
     return (
       <CardRestaurante
@@ -65,7 +62,13 @@ const Home = () => {
       />
       )
   })
+console.log(mapeandoRestaurantes)
+  const filtroCategoria = (categoria) => {
+    setFiltrandoCategoria(categoria)
 
+  }
+
+console.log(filtrandoCategoria)
   return (
     <MainContainerFeed>
       <Header/>
@@ -79,7 +82,12 @@ const Home = () => {
             />
       </CreatingPost>
       
-      <Slide/>
+      <Slide 
+      restaurantes = {restaurantes}
+      filtroCategoria = {filtroCategoria}
+      
+      />
+
       <Cards>
         {mapeandoRestaurantes.length > 0 ? (
           mapeandoRestaurantes
