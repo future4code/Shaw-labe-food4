@@ -11,7 +11,7 @@ const useRequestData = (initialData, url) => {
       }
     })
       .then((response) => {
-        setData(response.data)
+        setData(response.data.user)
       })
       .catch((error) => {
         console.log(error)

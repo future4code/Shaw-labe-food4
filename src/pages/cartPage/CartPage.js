@@ -3,13 +3,18 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { BASE_URL } from "../../constants/BASE_URL";
-import {  Button,  CartContainer,  ContainerAddress,
-        ContainerH5,  ContainerPrice,  ContainerTotal,
-        FormOfPayment,  FormPayment,  H5Styled,
-        InputStyled,  LabelStyled,  PAddress,} from "./styled";
+import {
+  Button, CartContainer, ContainerAddress,
+  ContainerH5, ContainerPrice, ContainerTotal,
+  FormOfPayment, FormPayment, H5Styled,
+  InputStyled, LabelStyled, PAddress,ProfileAdress,
+} from "./styled";
+import useRequestData from "../../hooks/useRequestData"
 
 const CartPage = () => {
 
+  const [profile, getProfile] = useRequestData([],`${BASE_URL}/profile`)
+  console.log(profile)
   const confirmPedido = () => {
     axios
       .post(`${BASE_URL}/restaurants/order`)
@@ -22,40 +27,41 @@ const CartPage = () => {
   };
 
   return (
-      <CartContainer>
-        <Header/>
-        <ContainerAddress>
-          <PAddress>Endereço de entrega</PAddress>
-        </ContainerAddress>
-        <p>carrinho vazio</p>
-        <ContainerTotal>
-          <ContainerH5>
-            <H5Styled>SUBTOTAL</H5Styled>
-          </ContainerH5>
-          <ContainerPrice></ContainerPrice>
-        </ContainerTotal>
-        <FormOfPayment>Forma de pagamento</FormOfPayment>
-        <FormPayment>
-          <div>
-            <LabelStyled>
-              <InputStyled type="radio" name="pagamento" value="Dinheiro" />
-              Dinheiro
-            </LabelStyled>
-          </div>
-          <div>
-            <LabelStyled>
-              <InputStyled
-                type="radio"
-                name="pagamento"
-                value="Cartão de crédito vinicius"
-              />
-              Cartão de crédito
-            </LabelStyled>
-          </div>
-        </FormPayment>
-        <Button onClick={() => confirmPedido()}>Confirmar</Button>
-        <Footer/>
-      </CartContainer>
+    <CartContainer>
+      <Header />
+      <ContainerAddress>
+        <PAddress>Endereço de entrega</PAddress>
+        <ProfileAdress>{profile.address && profile.address}</ProfileAdress>
+      </ContainerAddress>
+      <p>carrinho vazio</p>
+      <ContainerTotal>
+        <ContainerH5>
+          <H5Styled>SUBTOTAL</H5Styled>
+        </ContainerH5>
+        <ContainerPrice></ContainerPrice>
+      </ContainerTotal>
+      <FormOfPayment>Forma de pagamento</FormOfPayment>
+      <FormPayment>
+        <div>
+          <LabelStyled>
+            <InputStyled type="radio" name="pagamento" value="Dinheiro" />
+            Dinheiro
+          </LabelStyled>
+        </div>
+        <div>
+          <LabelStyled>
+            <InputStyled
+              type="radio"
+              name="pagamento"
+              value="Cartão de crédito vinicius"
+            />
+            Cartão de crédito
+          </LabelStyled>
+        </div>
+      </FormPayment>
+      <Button onClick={() => confirmPedido()}>Confirmar</Button>
+      <Footer />
+    </CartContainer>
   );
 };
 
