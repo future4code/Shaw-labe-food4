@@ -8,6 +8,7 @@ import { goToLoginPage, goToRestaurante } from "../../router/coordinator";
 import CardRestaurante from "../../components/CardRestaurante/CardRestaurante";
 import { Cards, MainContainerFeed } from "./styled";
 import Header from "../../components/Header/Header";
+import Slide from "../../components/Slide/Slide"
 
 
 const CreatingPost = styled.div`
@@ -61,27 +62,15 @@ const Home = () => {
     <MainContainerFeed>
       <Header/>
       <CreatingPost></CreatingPost>
+      <Slide/>
       <Cards>
         {mapeandoRestaurantes.length > 0 ? (
           mapeandoRestaurantes
         ) : (
           <p>Loading ...</p>
         )}  
-         {/* {restaurantes.length>0 ? restaurantes.map((restaurante)=>{
-            return (
-            <CardRestaurante
-            key = {restaurante.id}
-            restaurante = {restaurante}
-            nome = {restaurante.name}
-            logo = {restaurante.logoUrl}
-            />
-            )
-            }) : <p>Loading ...</p>} */}
-        {/* <h3>{restaurantes.name}</h3> */}
-        <CardRestaurante
-        // nome = {restaurantes.name}
-        // logo = {restaurantes.logoUrl}
-        />
+        
+        <CardRestaurante/>
       </Cards>
       <Footer/>
     </MainContainerFeed>
