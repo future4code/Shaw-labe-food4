@@ -13,7 +13,7 @@ import styled from "styled-components"
 
   const SlideContainer = styled.div`
     /* display: flex; */
-    width: 250px;
+    width: 300px;
     margin-top: 12px;
     /* background-color: lightgrey; */
   `

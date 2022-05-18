@@ -12,6 +12,7 @@ import Slide from "../../components/Slide/Slide"
 
 
 const CreatingPost = styled.div`
+margin: 6px;
 `
 const Home = () => {
   const [restaurantes, setRestaurantes] = useState([]);
@@ -68,14 +69,16 @@ const Home = () => {
   return (
     <MainContainerFeed>
       <Header/>
-      <CreatingPost></CreatingPost>
-      <input
-      type="text"
-      placeholder="Buscar"
-      onChange={(event)=>{
-        setSearchTerm(event.target.value)
-      }}
-      />
+      <CreatingPost>
+          <input
+            type="text"
+            placeholder="Buscar"
+            onChange={(event)=>{
+            setSearchTerm(event.target.value)
+            }}
+            />
+      </CreatingPost>
+      
       <Slide/>
       <Cards>
         {mapeandoRestaurantes.length > 0 ? (
