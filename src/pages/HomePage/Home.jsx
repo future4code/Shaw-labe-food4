@@ -15,6 +15,7 @@ const CreatingPost = styled.div`
 `
 const Home = () => {
   const [restaurantes, setRestaurantes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("")
   const navigate = useNavigate();
 
   const getRestaurants = () => {
@@ -42,7 +43,14 @@ const Home = () => {
     getRestaurants()
   },[])
 
-  const mapeandoRestaurantes = restaurantes.map((restaurante)=>{
+  const mapeandoRestaurantes = restaurantes.filter((restaurante)=>{
+    if(searchTerm == ""){
+      return restaurante
+    } else if(restaurante.name.toLowerCase().includes(searchTerm.toLowerCase())){
+      return restaurante
+    }
+  })
+  .map((restaurante)=>{
     return (
       <CardRestaurante
         Entrar={()=>goToRestaurante(navigate,restaurante.id)}
@@ -57,11 +65,17 @@ const Home = () => {
       )
   })
 
-  console.log(restaurantes);
   return (
     <MainContainerFeed>
       <Header/>
       <CreatingPost></CreatingPost>
+      <input
+      type="text"
+      placeholder="Buscar"
+      onChange={(event)=>{
+        setSearchTerm(event.target.value)
+      }}
+      />
       <Slide/>
       <Cards>
         {mapeandoRestaurantes.length > 0 ? (
