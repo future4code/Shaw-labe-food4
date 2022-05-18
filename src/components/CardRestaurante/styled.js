@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
     background-color: white;
     border: 0.8px solid #C7C7CC;
     border-radius: 16px;
-    /* margin: 5px 0; */
+    margin: 6px 0;
     word-wrap: break-word;
     color: #D1D1D6;
     /* position: relative; */
