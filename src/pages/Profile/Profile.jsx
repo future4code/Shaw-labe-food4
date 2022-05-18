@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../../constants/BASE_URL'
 import CardOrderHistory from "../Profile/CardOrderHistory"
-import { MainProfile, ContainerCardName, ContainerButtonName, CardName, ContainerCardAddress, CardAddress, ContainerButtonAdress, Divgrey, DivHistory } from './styled'
+import { MainProfile, ContainerCardName, ContainerButtonName, CardName, ContainerCardAddress,Orderhistory, CardAddress, ContainerButtonAdress, Divgrey, DivHistory } from './styled'
 import { ImPencil } from "react-icons/im"
 import { goToRegistrarEndereço,goToEdditProfile } from '../../router/coordinator'
 import { useNavigate } from 'react-router-dom'
@@ -56,11 +56,7 @@ const Profile = () => {
           <ImPencil onClick={()=>goToRegistrarEndereço(navigate)} />
         </ContainerButtonAdress>
       </ContainerCardAddress>
-      <p>Histórico de pedidos</p>
-      <center>
-        <Divgrey></Divgrey>
-      </center>
-
+      <Orderhistory>Histórico de pedidos</Orderhistory>
       <DivHistory>
         <CardOrderHistory />
       </DivHistory>
