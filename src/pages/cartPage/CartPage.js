@@ -47,7 +47,7 @@ const CartPage = () => {
               <InputStyled
                 type="radio"
                 name="pagamento"
-                value="Cartão de crédito vinicius"
+                value="Cartão de crédito "
               />
               Cartão de crédito
             </LabelStyled>
