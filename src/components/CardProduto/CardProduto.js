@@ -22,7 +22,7 @@ const CardProduto = (props) => {
         <Conteudo>
             <p className='titulo'>{props.produto.name}</p>
             <p>{props.produto.description}</p>
-            <p className='preco'>R${props.produto.price}0</p>
+            <p className='preco'>R${props.produto.price.toFixed(2)}</p>
         </Conteudo>
         <Botao onClick={()=>goToAddProduct(navigate,props.restId,props.produto.id)}>adicionar</Botao>
     </MainContainer>
