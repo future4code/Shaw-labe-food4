@@ -2,13 +2,14 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 import { VisibilityOff, Visibility } from "@material-ui/icons";
 import { useState } from "react";
+import {InputPasswordStyle, PasswordStyle} from "./styled"
 
 //Como mudar o estado do password
-export const InputPassword = ({form, onChange}) => {
+export const InputPassword = ({ form, onChange }) => {
   const [senhaOn, setSenhaOn] = useState(false);
-
+  
   return (
-    <div style = {{display: "flex", position: "relative"}}>
+    <PasswordStyle>
       <TextField
         name="password"
         value={form.password}
@@ -23,7 +24,12 @@ export const InputPassword = ({form, onChange}) => {
         fullWidth
         margin="normal"
       />
-      <button style = {{background: "transparent", border: 0, /* position: "absolute" */}} onClick={() => setSenhaOn(!senhaOn)}> {senhaOn ? <Visibility/> : <VisibilityOff/>  } </button>
-    </div>
+      <InputPasswordStyle
+        onClick={() => setSenhaOn(!senhaOn)}
+      >
+        {senhaOn ? <Visibility /> : <VisibilityOff />}
+      </InputPasswordStyle>
+
+    </PasswordStyle>
   );
 };

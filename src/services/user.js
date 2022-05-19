@@ -22,7 +22,7 @@ export const login = (body, clear, navigate) => {
 };
 
 //Requisição para criar um login e ir para a criação de endereços
-export const signUp = (body, clear, navigate /* setRightButtonText */) => {
+export const signUp = (body, clear, navigate) => {
   axios
     .post(`${BASE_URL}/signup`, body)
     .then((res) => {

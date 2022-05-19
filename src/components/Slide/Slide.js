@@ -40,7 +40,8 @@ import styled from "styled-components"
       <div>
         <SlideContainer>
           <Slider {...settings}>
-            {mapeandoCategoria}
+            {
+            mapeandoCategoria}
           </Slider>
         </SlideContainer>
         
