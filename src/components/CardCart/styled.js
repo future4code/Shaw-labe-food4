@@ -45,7 +45,8 @@ export const Botao = styled.button`
     position: absolute;
     right: 0%;
     border-radius: 15px 0px 15px 0px;
-    border: 1px solid black;
+    color: #E86E5A;
+    border: 2px solid #E86E5A;
     font-family: 'Roboto', sans-serif;
 `
 export const Quantia = styled.div`

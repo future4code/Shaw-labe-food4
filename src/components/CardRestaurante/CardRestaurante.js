@@ -2,6 +2,7 @@ import React from 'react'
 import { Banner, Botao, Conteudo, MainContainer } from './styled'
 
 const CardRestaurante = (props) => {
+
   return (
     <MainContainer onClick={props.Entrar}>
         <Banner src={props.logo}/>
