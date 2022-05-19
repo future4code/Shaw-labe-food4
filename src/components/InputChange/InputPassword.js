@@ -8,7 +8,7 @@ export const InputPassword = ({form, onChange}) => {
   const [senhaOn, setSenhaOn] = useState(false);
 
   return (
-    <div style = {{display: "flex"}}>
+    <div style = {{display: "flex", position: "relative"}}>
       <TextField
         name="password"
         value={form.password}
@@ -23,7 +23,7 @@ export const InputPassword = ({form, onChange}) => {
         fullWidth
         margin="normal"
       />
-      <button style = {{background: "transparent", border: 0 }} onClick={() => setSenhaOn(!senhaOn)}> {senhaOn ? <Visibility/> : <VisibilityOff/>  } </button>
+      <button style = {{background: "transparent", border: 0, /* position: "absolute" */}} onClick={() => setSenhaOn(!senhaOn)}> {senhaOn ? <Visibility/> : <VisibilityOff/>  } </button>
     </div>
   );
 };

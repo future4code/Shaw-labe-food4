@@ -17,6 +17,16 @@ const SignUpForm = () => {
   });
   const navigate = useNavigate();
 
+  //Máscara de cpf regex para CPF
+  const cpfMask = (value) => {
+    return value
+        .replace(/\D/g, "")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})/, "$1-$2")
+        .replace(/(-\d{2})\d+?$/, "$1");
+};
+
   const onSubimitForm = (event) => {
     console.log(form);
     event.preventDefault();
@@ -60,15 +70,15 @@ const SignUpForm = () => {
             />
             <TextField
               name="cpf"
-              value={form.cpf}
+              value={cpfMask (form.cpf)}
               onChange={onChange}
-              type="number"
+              type="text"
               size="30"
               placeholder="Cpf"
-              pattern={
+             /*  pattern={
                 "^([0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}|[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2})$"
               }
-              title={"Digite um CPF válido"}
+              title={"Digite um CPF válido"} */
               required
               autoFocus
               variant="outlined"
@@ -76,7 +86,7 @@ const SignUpForm = () => {
               fullWidth
               margin="normal"
             />
-           {/*  <TextField
+            {/*  <TextField
               name="password"
               value={form.password}
               onChange={onChange}
@@ -95,10 +105,9 @@ const SignUpForm = () => {
         </center>
 
         <center>
-          <PostButton>
-            <ButtonLetter>Cadastrar</ButtonLetter>
-          </PostButton>
+          <PostButton>Cadastrar</PostButton>
         </center>
+        
       </form>
     </div>
   );

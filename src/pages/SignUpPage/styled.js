@@ -6,31 +6,13 @@ export const InputSize = styled.div`
 `
 
 export const PostButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 2% 4%;
-  width: 80vw;
-  height: 7vh;
-  margin: 3%;
-  cursor: pointer;
-  background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%), #4088cb;
+  width: 90%;
+  height: 8vh;
+  padding: 12px 16px;
+  border-radius: 2px;
+  background-color: #e86e5a;
   border: none;
-  border-radius: 12px;
-`;
-
-export const ButtonLetter = styled.div`
-  height: 23px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
-  color: #ffffff;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  margin: 2%;
 `;
 
 export const ImgSize = styled.img`
