@@ -4,6 +4,7 @@ export const MainProfile=styled.main`
 display: flex;
 flex-direction: column;
 width: 100%;
+margin-bottom: 60px;
 
 `
 
@@ -60,12 +61,29 @@ margin-left: 0.5em;
 export const ContainerOrderHistory=styled.div`
 display: flex;
 flex-direction: column;
-height: 15vh;
+min-height: 10vh;
 width: 90%;
-border: 2px solid #c6c6c6;
-border-radius:12px;
+border: 1px solid #c6c6c6;
+border-radius:5px;
+padding: 0.5em;
+margin-bottom: 0.5em;
+p{
+  margin: 0.1em 0 0.1em 0;
+}
 `
-
+export const RestauntName = styled.p`
+color: #e86e5a;
+font-family: 'Roboto', sans-serif;
+`;
+export const DatadoPedido=styled.p`
+color:#b8b8b8;
+font-family: 'Roboto', sans-serif;
+`;
+export const SubTotal=styled.p`
+color:#000000;
+font-family: 'Roboto', sans-serif;
+font: bold;
+`;
 //Profile eddit page
 
 export const ContainerProfileEddit=styled.main`
