@@ -5,8 +5,6 @@ import { ThemeProvider } from "@material-ui/core";
 import theme from "./components/Theme/theme";
 import GlobalState from "./global/GlobalState";
 
-import GlobalState from "./global/GlobalState";
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
