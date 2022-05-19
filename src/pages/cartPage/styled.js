@@ -97,7 +97,7 @@ export const Button = styled.button`
   height: 5vh;
   text-decoration: none;
   color: black;
-  background-color: #e8222e;
+  background-color: #e86e5a;
   border: none;
   font-weight: bold;
   font-size: 14px;
@@ -105,7 +105,6 @@ export const Button = styled.button`
   padding: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  &&:hover {
-    background-color: #d12310;
-  }
+ 
+  
 `;
