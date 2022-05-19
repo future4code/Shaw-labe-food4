@@ -12,10 +12,12 @@ import Slide from "../../components/Slide/Slide"
 
 
 const CreatingPost = styled.div`
+margin: 6px;
 `
 const Home = () => {
   const [restaurantes, setRestaurantes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("")
+  const [filtrandoCategoria, setFiltrandoCategoria] = useState("")
   const navigate = useNavigate();
 
   const getRestaurants = () => {
@@ -43,13 +45,9 @@ const Home = () => {
     getRestaurants()
   },[])
 
-  const mapeandoRestaurantes = restaurantes.filter((restaurante)=>{
-    if(searchTerm == ""){
-      return restaurante
-    } else if(restaurante.name.toLowerCase().includes(searchTerm.toLowerCase())){
-      return restaurante
-    }
-  })
+  const mapeandoRestaurantes = restaurantes
+  .filter((restaurante)=>searchTerm? restaurante.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
+  .filter((restaurante)=>filtrandoCategoria? restaurante.category.toLowerCase().includes(filtrandoCategoria.toLocaleLowerCase()) : true)
   .map((restaurante)=>{
     return (
       <CardRestaurante
@@ -64,19 +62,32 @@ const Home = () => {
       />
       )
   })
+console.log(mapeandoRestaurantes)
+  const filtroCategoria = (categoria) => {
+    setFiltrandoCategoria(categoria)
 
+  }
+
+console.log(filtrandoCategoria)
   return (
     <MainContainerFeed>
       <Header/>
-      <CreatingPost></CreatingPost>
-      <input
-      type="text"
-      placeholder="Buscar"
-      onChange={(event)=>{
-        setSearchTerm(event.target.value)
-      }}
+      <CreatingPost>
+          <input
+            type="text"
+            placeholder="Buscar"
+            onChange={(event)=>{
+            setSearchTerm(event.target.value)
+            }}
+            />
+      </CreatingPost>
+      
+      <Slide 
+      restaurantes = {restaurantes}
+      filtroCategoria = {filtroCategoria}
+      
       />
-      <Slide/>
+
       <Cards>
         {mapeandoRestaurantes.length > 0 ? (
           mapeandoRestaurantes

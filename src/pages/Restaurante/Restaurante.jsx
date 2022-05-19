@@ -19,8 +19,6 @@ const Restaurante = () => {
     .then((response) => {
       setRest(response.data.restaurant)
       setProdutos(response.data.restaurant.products)
-      console.log(response.data.restaurant)
-      console.log(response.data.restaurant.products)
     }).catch((error) => {
     });
   };
@@ -32,7 +30,7 @@ const Restaurante = () => {
   return (
     <MainContainer>
       <Header/>
-      {params.produto ? <ModalQuantia/> : null}
+      {params.produto ? <ModalQuantia produtos={produtos}/> : null}
       {rest && rest.name ? 
       <Local>    
         <Banner src={rest.logoUrl}/>
