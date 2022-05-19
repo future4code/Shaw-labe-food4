@@ -5,6 +5,7 @@ export const CartContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100vw;
+  font-family: 'Roboto', sans-serif;
 `;
 export const ContainerAddress = styled.div`
   display: flex;
@@ -16,25 +17,34 @@ export const ContainerAddress = styled.div`
   height: 10vh;
 `;
 export const PAddress = styled.p`
+  margin: 2px;
   color: lightgrey;
   font-size: 16px;
   font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
-  margin-left: 10px;
+  padding-left: 1em;
   gap: 5px;
+`;
+export const ProfileAdress=styled.p`
+margin:2px;
+font-weight: bold;
+padding-left: 1em;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 `;
 export const Address = styled.p`
   color: black;
   font-size: 16px;
   font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-left: 10px;
 `;
 export const ContainerTotal = styled.div`
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+   margin-top: 15px;
+  width: 90%;
 `;
 export const ContainerH5 = styled.div`
   display: flex;
@@ -49,7 +59,17 @@ export const ContainerPrice = styled.div`
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
-  width: 60%;
+  margin-right: 20px;
+  p{
+    margin: 0;
+    align-self: flex-start;
+  }
+  .valor{
+    margin: 0;
+    align-self: flex-start;
+    color: #E86E5A
+;
+  }
 `;
 export const FormOfPayment = styled.p`
   width: 96%;
@@ -77,7 +97,7 @@ export const Button = styled.button`
   height: 5vh;
   text-decoration: none;
   color: black;
-  background-color: #e8222e;
+  background-color: #e86e5a;
   border: none;
   font-weight: bold;
   font-size: 14px;
@@ -85,7 +105,6 @@ export const Button = styled.button`
   padding: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  &&:hover {
-    background-color: #d12310;
-  }
+ 
+  
 `;

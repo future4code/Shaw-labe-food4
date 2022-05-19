@@ -37,7 +37,7 @@ export const Banner = styled.div`
     background-image: url(${(props) => props.src});
     background-position: center;
     background-size: cover;
-`
+    `
 export const Botao = styled.button`
     display: flex;
     flex-flow: column;
@@ -47,4 +47,19 @@ export const Botao = styled.button`
     border-radius: 15px 0px 15px 0px;
     border: 1px solid black;
     font-family: 'Roboto', sans-serif;
+`
+export const Quantia = styled.div`
+    display: ${(props) => props.mostra === false ? 'none' : 'flex'};
+    /* display: flex; */
+    flex-flow: column;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 30px;
+    height: 25%;
+    border-radius: 0px 15px 0px 15px;
+    border: 2px solid #E86E5A;
+    p{
+        color: #E86E5A;
+    }
 `
