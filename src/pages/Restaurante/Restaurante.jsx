@@ -1,18 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CardProduto from '../../components/CardProduto/CardProduto';
 import Header from '../../components/Header/Header';
 import ModalQuantia from '../../components/ModalQuantia/ModalQuantia';
 import { BASE_URL } from '../../constants/BASE_URL';
+import { goToLoginPage } from '../../router/coordinator';
 import { Banner, Local, MainContainer } from './styled';
+
 
 const Restaurante = () => {
   const [rest,setRest] = useState({})
   const [produtos,setProdutos] = useState([])
   const params = useParams()
-  // const restaurante = 1
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk1aEE1U0VyY0Q0ZzJYSVhxb01qIiwibmFtZSI6IlBhYmxvIiwiZW1haWwiOiJwYWJsb0BvaS5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xOCIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MSAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2NTI3MjQ5MDl9.fPCYPmYhhktxwzCFT0qC92lCq41MwbarBcISKWCBM0w"
+  const token = localStorage.getItem('token')
+  const navigate = useNavigate()
 
   const pegaRestDetail = () => {
     axios.get(`${BASE_URL}/restaurants/${params.id}`,{headers:{auth:token}})
@@ -24,6 +26,9 @@ const Restaurante = () => {
   };
 
   useEffect(()=>{
+    if(token === null){
+      goToLoginPage(navigate)
+    }
     pegaRestDetail()
   },[])
 

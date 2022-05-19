@@ -53,10 +53,13 @@ export const Quantia = styled.div`
     display: ${(props) => props.mostra === false ? 'none' : 'flex'};
     /* display: flex; */
     flex-flow: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0%;
     top: 0%;
-    width: 30px;
+    min-width: 30px;
+    padding-right: 5px;
     height: 25%;
     border-radius: 0px 15px 0px 15px;
     border: 2px solid #E86E5A;

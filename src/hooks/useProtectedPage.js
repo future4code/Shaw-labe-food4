@@ -9,7 +9,7 @@ const useProtectedPage = () => {
     if (!token){
       goToLoginPage(navigate)
     }
-  }, [navigate])
+  }, [])
 }
 
 export default useProtectedPage

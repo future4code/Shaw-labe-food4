@@ -1,3 +1,4 @@
+import { ColorLensOutlined } from '@material-ui/icons'
 import React, { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { GlobalContext } from '../../global/GlobalContext'
@@ -11,9 +12,9 @@ const ModalQuantia = (props) => {
   const [form, onChange, clear] = useForm({quantity: ''});
   const {states, setter} = useContext(GlobalContext)
   setter.setIdRest(params.id)
-  console.log(states.idRest)
   const setProducts = setter.setProducts
   const products = states.products
+  console.log(products)
 
   const filtro = props.produtos.filter((produto)=>{
     return produto.id === params.produto
@@ -24,7 +25,11 @@ const ModalQuantia = (props) => {
     const busca = states.products.findIndex((i)=>i.id === params.produto)
     let listProducts = [...products]
     if(busca === -1 ){
-      listProducts.push({quantity:Number(form.quantity), produto:filtro})
+      listProducts.push({
+        quantity:Number(form.quantity), 
+        produto:filtro,
+        id:params.produto}
+        )
     }else{
       listProducts[busca].quantity += Number(form.quantity);
     }
@@ -32,9 +37,6 @@ const ModalQuantia = (props) => {
     clear()
     goToBack(navigate)
   }
-   console.log(products)
-   console.log(form.quantity)
-   console.log(params.produto)
   return (
     <Background>
       <MainContainer>
