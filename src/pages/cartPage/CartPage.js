@@ -8,7 +8,7 @@ import { GlobalContext } from "../../global/GlobalContext";
 import {  Button,  CartContainer,  ContainerAddress,
         ContainerH5,  ContainerPrice,  ContainerTotal,
         FormOfPayment,  FormPayment,  H5Styled,
-        InputStyled,  LabelStyled,  PAddress,} from "./styled";
+        InputStyled,  LabelStyled,  PAddress, ProfileAdress} from "./styled";
 import useRequestData from "../../hooks/useRequestData"
 
 
@@ -61,6 +61,7 @@ const CartPage = () => {
         <Header/>
         <ContainerAddress>
           <PAddress>Endereço de entrega</PAddress>
+          <ProfileAdress>{profile.address && profile.address}</ProfileAdress>
         </ContainerAddress>
         {products.length >0 ? 
           <div> 
