@@ -7,6 +7,18 @@ export const CartContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  .restinf{
+    width: 90%;
+    margin: 10px 0;
+  }
+  .nome{
+    color: #E86E5A;
+    margin: 5px 0;
+  }
+  .inf{
+    color: #C7C7CC;
+    margin: 5px 0;
+  }
 `;
 export const ContainerAddress = styled.div`
   display: flex;
