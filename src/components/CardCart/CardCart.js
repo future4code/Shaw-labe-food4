@@ -5,7 +5,7 @@ import { Banner, Botao, Conteudo, MainContainer, Quantia } from './styled'
 const CardCart = (props) => {
   const {states, setter} = useContext(GlobalContext)
 
-  const removeItemFromCart = (itemToRemove) => {
+  const removeItemFromCart = () => {
     const busca = states.products.findIndex((i)=>i.id === props.produto.id)
     let listProducts = [...states.products];
     if (listProducts[busca].quantity === 1) {

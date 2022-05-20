@@ -22,6 +22,10 @@ export const MainContainer = styled.div`
     .preco{
         color: black;
     }
+    .remove{
+        color: #E86E5A;
+        border: 2px solid #E86E5A;
+    }
 `
 export const Conteudo = styled.div`
     display: flex;
@@ -45,8 +49,9 @@ export const Botao = styled.button`
     position: absolute;
     right: 0%;
     border-radius: 15px 0px 15px 0px;
-    border: 1px solid black;
+    border: 2px solid #8E8E93;
     font-family: 'Roboto', sans-serif;
+   
 `
 export const Quantia = styled.div`
     display: ${(props) => props.mostra === false ? 'none' : 'flex'};

@@ -36,14 +36,13 @@ const CartPage = () => {
   const restaurant = rests && rests.filter((rest)=>{
     return rest.id === idRest
   })
+
   const produ = products && products.map((prod)=>{
     return {
       id: prod.id,
       quantity: prod.quantity
     }
     })
-  console.log(produ)
-
 
   const [profile, getProfile] = useRequestData([],`${BASE_URL}/profile`)
   console.log(profile)
@@ -79,13 +78,13 @@ const CartPage = () => {
           <ProfileAdress>{profile.address && profile.address}</ProfileAdress>
         </ContainerAddress>
         {products && products.length >0 ? 
-          <div> 
+          <div className="restinf"> 
             {rests && restaurant && restaurant.map((inf)=>{
               return(
                 <div>
-                  <p>{inf.name}</p> 
-                  <p>{inf.address}</p> 
-                  <p>{inf.deliveryTime-10} - {inf.deliveryTime} min</p>
+                  <p className="nome">{inf.name}</p> 
+                  <p className="inf">{inf.address}</p> 
+                  <p className="inf">{inf.deliveryTime-10} - {inf.deliveryTime} min</p>
                 </div>
               )
             })}
