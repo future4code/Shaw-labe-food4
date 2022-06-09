@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { Conteudo, MainContainer } from './styled'
 import seta from '../../assets/img/seta.png'
-import { goToHome, goToLoginPage } from '../../router/coordinator'
+import { goToHome, goToLoginPage, goToProfile } from '../../router/coordinator'
 
 const Header = () => {
     const navigate = useNavigate()
@@ -35,6 +35,7 @@ const Header = () => {
         </Conteudo> : null}
         {location.pathname === `/user/profile/eddit-profile` ? 
         <Conteudo>
+            <img src={seta} alt='Seta Voltar' onClick={()=>goToProfile(navigate)}/>
             <p>Editar cadastro</p>
         </Conteudo> : null}
     </MainContainer>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../constants/BASE_URL";
 import { goToHome, goToRegistrarEndereço } from "../router/coordinator";
 
+
 export const login = (body, clear, navigate) => {
   axios
     .post(`${BASE_URL}/login`, body)
