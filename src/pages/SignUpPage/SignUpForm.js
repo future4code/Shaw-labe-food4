@@ -8,6 +8,7 @@ import logo from "../../assets/img/logo.png";
 import { InputPassword } from "../../components/InputChange/InputPassword";
 import { InputPasswordStyle, PasswordStyle } from "../../components/InputChange/styled";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
+import {signUp} from '../../services/user'
 
 export const SignUpForm = () => {
   const [form, onChange, clear] = useForm({
@@ -47,6 +48,7 @@ export const SignUpForm = () => {
       /* alert("Senha incorreta") */
       setErrorPassword(true)
   };
+  signUp(form,clear,navigate)
 }
 
   return (
