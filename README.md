@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Layout: rappi4B
 
-## Available Scripts
+Projeto final do Frontend do curso de Desenvolvimento Web Full Stack da Labenu intitulado de *LabeFood*.
 
-In the project directory, you can run:
+LabeFood
 
-### `npm start`
+Descrição do Projeto:
+- Site/app de delivery de comida inspirado no Rappi
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Status do projeto:
+Fase de teste
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Tecnologias utilizadas:
+- JavaScrit - React - HTML - CSS
 
-### `npm test`
+Pessoas Contribuidoras:
+- Rodrigo Vieira 
+- Sérvulo Silva
+- Pablo Gomes 
+- Matheus Souza
+- Willhan Marques
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Link Surge:
+http://labefood-rappi.surge.sh
 
-### `npm run build`
+Imagens:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Login
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/99182794/169717831-102b4f14-0172-4c4c-98b9-e1f1c28f5bb4.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Cadastro
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/99182794/169717932-26193de3-ca35-4f1c-ab8d-970faccad209.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+Home
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://user-images.githubusercontent.com/99182794/169718097-532ce6a7-94af-45b5-b688-b3b43b77e8d1.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Página do Restaurante
 
-### Analyzing the Bundle Size
+![image](https://user-images.githubusercontent.com/99182794/169718130-615be444-63a8-498b-aaae-d068958442dd.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Adicionando produtos ao carrinho
 
-### Advanced Configuration
+![image](https://user-images.githubusercontent.com/99182794/169718152-ac881964-4c04-46a4-8398-667e310b02b7.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Carrinho
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![image](https://user-images.githubusercontent.com/99182794/169718220-7e859d86-dba3-4254-8d23-c3929a0b8823.png)
+
+
+
+Perfil
+
+![image](https://user-images.githubusercontent.com/99182794/169718250-fa78486a-c773-4d3e-a078-069a5f53648e.png)
+
+
